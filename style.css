@@ -1,402 +1,200 @@
-/* Algemene instellingen */
-
 * {
     box-sizing: border-box;
 }
 
-
 body {
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f4f7fb;
-    color:#333;
-    line-height:1.6;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #333;
+    line-height: 1.6;
 }
-
 
 /* Header */
 
 .header {
-
-    background:#0b5fa5;
-    color:white;
-    padding:20px 30px;
-    text-align:center;
-
+    background: #0b5fa5;
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
 }
-
 
 .logo h1 {
-
-    margin:0;
-    font-size:38px;
-
+    margin: 0;
+    font-size: 38px;
 }
-
 
 .logo p {
-
-    margin:5px 0 0;
-    font-size:18px;
-
+    margin: 5px 0 0;
+    font-size: 18px;
 }
-
 
 nav {
-
-    margin-top:15px;
-
+    margin-top: 15px;
 }
-
 
 nav a {
-
-    color:white;
-    text-decoration:none;
-    margin:0 10px;
-    font-size:16px;
-
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
 }
-
 
 nav a:hover {
-
-    text-decoration:underline;
-
+    text-decoration: underline;
 }
 
 
-
-/* Algemene secties */
+/* Alle secties */
 
 section {
-
-    max-width:1100px;
-    margin:35px auto;
-    padding:30px;
-
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 30px;
 }
 
 
 h2 {
-
-    text-align:center;
-    color:#0b5fa5;
-    margin-bottom:25px;
-
+    text-align: center;
+    color: #0b5fa5;
+    margin-bottom: 25px;
 }
 
+
+/* Blokken */
+
+.hero,
+.intro,
+.populair,
+.artikelen,
+.onderwerpen,
+.faq,
+.ai,
+.over,
+.vertrouwen {
+    background: white;
+    border-radius: 15px;
+}
 
 
 /* Hero */
 
 .hero {
-
-    background:white;
-    border-radius:15px;
-    text-align:center;
-
+    text-align: center;
 }
-
-
-.hero h2 {
-
-    font-size:32px;
-
-}
-
-
-.hero p {
-
-    font-size:18px;
-
-}
-
-
-
-/* Intro blok */
-
-.intro,
-.over {
-
-    background:white;
-    border-radius:15px;
-
-}
-
 
 
 /* Zoekveld */
 
 .zoek {
-
-    margin-top:25px;
-
+    margin-top: 25px;
 }
 
 
 .zoek input {
-
-    width:65%;
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:8px;
-
+    width: 65%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
 }
 
 
 .zoek button {
-
-    padding:12px 22px;
-    background:#0b5fa5;
+    padding: 12px 22px;
+    background: #0b5fa5;
     color:white;
     border:none;
     border-radius:8px;
-    cursor:pointer;
-
 }
-
 
 
 /* Kaarten */
 
 .kaarten {
-
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:20px;
-
 }
 
 
-
 .kaart {
-
     background:white;
     padding:22px;
     border-radius:12px;
     box-shadow:0 3px 10px rgba(0,0,0,0.08);
-
 }
 
 
-
 .kaart h3 {
-
     color:#0b5fa5;
-    font-size:21px;
-
 }
 
 
 .kaart a {
-
     display:inline-block;
     margin-top:10px;
     color:#0b5fa5;
     font-weight:bold;
     text-decoration:none;
-
 }
 
 
-.kaart a:hover {
-
-    text-decoration:underline;
-
-}
-
-
-
-/* Artikelen */
-
-.artikelen {
-
-    background:#ffffff;
-    border-radius:15px;
-
-}
-
-
-
-/* Populair */
-
-.populair {
-
-    background:white;
-    border-radius:15px;
-
-}
-
+/* Veel gezocht */
 
 .populair ul {
-
     max-width:700px;
     margin:auto;
-    font-size:17px;
-
 }
 
 
 .populair li {
-
     margin:12px 0;
-
 }
-
-
-.populair a {
-
-    color:#0b5fa5;
-    text-decoration:none;
-
-}
-
-
-
-/* Waarom */
-
-.waarom {
-
-    background:white;
-    border-radius:15px;
-    text-align:center;
-
-}
-
-
-.punten p {
-
-    font-size:17px;
-
-}
-
-
-
-/* AI */
-
-.ai {
-
-    background:#e8f3ff;
-    border-radius:15px;
-    text-align:center;
-
-}
-
-
-
-/* FAQ */
-
-.faq {
-
-    background:white;
-    border-radius:15px;
-
-}
-
-
-.faq h3 {
-
-    color:#0b5fa5;
-
-}
-
 
 
 /* Advertentie */
 
 .advertentie {
-
     max-width:1100px;
     margin:30px auto;
 }
 
 
-
 /* Footer */
 
 footer {
-
     background:#222;
     color:white;
     text-align:center;
     padding:30px;
     margin-top:40px;
-
 }
-
-
-footer a {
-
-    color:white;
-    text-decoration:none;
-
-}
-
-
-footer a:hover {
-
-    text-decoration:underline;
-
-}
-
 
 
 /* Mobiel */
 
 @media(max-width:700px){
 
-
-.header {
-
-    padding:20px;
-
-}
-
-
-.logo h1 {
-
-    font-size:28px;
-
-}
-
-
-nav a {
-
-    display:block;
-    margin:8px;
-
-}
-
-
 section {
-
     margin:20px;
     padding:20px;
-
 }
 
-
-.hero h2 {
-
-    font-size:25px;
-
+.logo h1 {
+    font-size:28px;
 }
 
+nav a {
+    display:block;
+    margin:8px;
+}
 
 .zoek input {
-
     width:100%;
     margin-bottom:10px;
-
 }
-
 
 .zoek button {
-
     width:100%;
-
 }
-
 
 }
