@@ -23,14 +23,77 @@ Windows, smartphones, internet, AI en digitale veiligheid.
 
 
 <!-- Google AdSense -->
-
-<script async 
-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6813339615680211"
-crossorigin="anonymous">
-</script>
+<!-- Script wordt pas geladen NADAT bezoeker toestemming geeft (zie consent-script onderaan) -->
 
 
 <link rel="stylesheet" href="style.css">
+
+<style>
+/* Cookie consent banner - inline zodat het werkt ongeacht style.css */
+#cookie-consent-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #10253f;
+  color: #ffffff;
+  padding: 16px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  z-index: 9999;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+  font-size: 14px;
+}
+
+#cookie-consent-banner p {
+  margin: 0;
+  max-width: 700px;
+  line-height: 1.4;
+}
+
+#cookie-consent-banner a {
+  color: #7ec3ff;
+  text-decoration: underline;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.cookie-buttons button {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#cookie-accept {
+  background: #2e8b57;
+  color: #ffffff;
+}
+
+#cookie-decline {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff !important;
+}
+
+.ad-label {
+  font-size: 12px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+</style>
 
 
 </head>
@@ -665,6 +728,8 @@ en breiden we de website continu uit met nieuwe, praktijkgerichte uitleg.
 </p>
 
 
+<p class="ad-label">Advertentie</p>
+
 <!-- Google AdSense advertentie -->
 
 <ins class="adsbygoogle"
@@ -674,13 +739,6 @@ data-ad-slot="4291951414"
 data-ad-format="auto"
 data-full-width-responsive="true">
 </ins>
-
-
-<script>
-
-(adsbygoogle = window.adsbygoogle || []).push({});
-
-</script>
 
 
 </section>
@@ -1184,6 +1242,60 @@ Disclaimer
 </footer>
 
 
+<!-- Cookie consent banner (vereist voor AdSense bij EU-bezoekers, GDPR) -->
+<div id="cookie-consent-banner" style="display:none;">
+  <p>
+    Wij gebruiken cookies om onze website te laten werken en om (via Google AdSense)
+    relevante advertenties te tonen. Lees ons
+    <a href="cookiebeleid.html">cookiebeleid</a> voor meer informatie.
+  </p>
+  <div class="cookie-buttons">
+    <button id="cookie-decline">Weigeren</button>
+    <button id="cookie-accept">Accepteren</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var CONSENT_KEY = "dhw_cookie_consent";
+  var banner = document.getElementById("cookie-consent-banner");
+  var acceptBtn = document.getElementById("cookie-accept");
+  var declineBtn = document.getElementById("cookie-decline");
+
+  function loadAdsense() {
+    var script = document.createElement("script");
+    script.async = true;
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6813339615680211";
+    script.crossOrigin = "anonymous";
+    document.head.appendChild(script);
+    script.onload = function () {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    };
+  }
+
+  var consent = localStorage.getItem(CONSENT_KEY);
+
+  if (consent === "granted") {
+    loadAdsense();
+  } else if (consent === "denied") {
+    // Geen advertenties laden, geen banner tonen
+  } else {
+    // Nog geen keuze gemaakt: toon banner
+    banner.style.display = "flex";
+  }
+
+  acceptBtn.addEventListener("click", function () {
+    localStorage.setItem(CONSENT_KEY, "granted");
+    banner.style.display = "none";
+    loadAdsense();
+  });
+
+  declineBtn.addEventListener("click", function () {
+    localStorage.setItem(CONSENT_KEY, "denied");
+    banner.style.display = "none";
+  });
+})();
+</script>
 
 <script src="script.js"></script>
 
