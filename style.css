@@ -1,7 +1,6 @@
 * {
     box-sizing: border-box;
 }
-
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -9,59 +8,44 @@ body {
     color: #333;
     line-height: 1.6;
 }
-
 /* Header */
-
 .header {
     background: #0b5fa5;
     color: white;
     padding: 20px 30px;
     text-align: center;
 }
-
 .logo h1 {
     margin: 0;
     font-size: 38px;
 }
-
 .logo p {
     margin: 5px 0 0;
     font-size: 18px;
 }
-
 nav {
     margin-top: 15px;
 }
-
 nav a {
     color: white;
     text-decoration: none;
     margin: 0 10px;
 }
-
 nav a:hover {
     text-decoration: underline;
 }
-
-
 /* Alle secties */
-
 section {
     max-width: 1100px;
     margin: 35px auto;
     padding: 30px;
 }
-
-
 h2 {
     text-align: center;
     color: #0b5fa5;
     margin-bottom: 25px;
 }
-
-
 /* Blokken */
-
 .hero,
 .intro,
 .populair,
@@ -74,30 +58,20 @@ h2 {
     background: white;
     border-radius: 15px;
 }
-
-
 /* Hero */
-
 .hero {
     text-align: center;
 }
-
-
 /* Zoekveld */
-
 .zoek {
     margin-top: 25px;
 }
-
-
 .zoek input {
     width: 65%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 8px;
 }
-
-
 .zoek button {
     padding: 12px 22px;
     background: #0b5fa5;
@@ -105,30 +79,24 @@ h2 {
     border:none;
     border-radius:8px;
 }
-
-
 /* Kaarten */
-
 .kaarten {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
     gap:20px;
 }
-
-
 .kaart {
     background:white;
     padding:22px;
     border-radius:12px;
     box-shadow:0 3px 10px rgba(0,0,0,0.08);
+    flex:1 1 220px;
+    max-width:260px;
 }
-
-
 .kaart h3 {
     color:#0b5fa5;
 }
-
-
 .kaart a {
     display:inline-block;
     margin-top:10px;
@@ -136,31 +104,20 @@ h2 {
     font-weight:bold;
     text-decoration:none;
 }
-
-
 /* Veel gezocht */
-
 .populair ul {
     max-width:700px;
     margin:auto;
 }
-
-
 .populair li {
     margin:12px 0;
 }
-
-
 /* Advertentie */
-
 .advertentie {
     max-width:1100px;
     margin:30px auto;
 }
-
-
 /* Footer */
-
 footer {
     background:#222;
     color:white;
@@ -168,33 +125,27 @@ footer {
     padding:30px;
     margin-top:40px;
 }
-
-
 /* Mobiel */
-
 @media(max-width:700px){
-
 section {
     margin:20px;
     padding:20px;
 }
-
 .logo h1 {
     font-size:28px;
 }
-
 nav a {
     display:block;
     margin:8px;
 }
-
 .zoek input {
     width:100%;
     margin-bottom:10px;
 }
-
 .zoek button {
     width:100%;
 }
-
+.kaart {
+    max-width:100%;
+}
 }
