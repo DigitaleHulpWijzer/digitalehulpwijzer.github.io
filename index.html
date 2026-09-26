@@ -28,6 +28,10 @@ Windows, smartphones, internet, AI en digitale veiligheid.
 
 <link rel="stylesheet" href="style.css">
 
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6813339615680211"
+       crossorigin="anonymous"></script>
+
 <style>
 /* Cookie consent banner - inline zodat het werkt ongeacht style.css */
 #cookie-consent-banner {
@@ -1263,14 +1267,11 @@ Disclaimer
   var declineBtn = document.getElementById("cookie-decline");
 
   function loadAdsense() {
-    var script = document.createElement("script");
-    script.async = true;
-    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6813339615680211";
-    script.crossOrigin = "anonymous";
-    document.head.appendChild(script);
-    script.onload = function () {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    };
+    if (window.adsbygoogle) {
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      } catch (e) {}
+    }
   }
 
   var consent = localStorage.getItem(CONSENT_KEY);
